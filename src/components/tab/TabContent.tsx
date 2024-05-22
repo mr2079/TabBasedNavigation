@@ -1,9 +1,14 @@
-import { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent } from "react";
 
 interface ITabContentProps {
-    component: FunctionComponent
+  component: FunctionComponent;
+  active: boolean;
 }
 
 export default function TabContent(props: ITabContentProps) {
-  return <>{<props.component/>}</>;
+  return (
+    <div className={!props.active ? "d-none": ""}>
+        <props.component />
+    </div>
+  );
 }

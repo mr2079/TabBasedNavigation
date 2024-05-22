@@ -7,9 +7,18 @@ export default function TabWrapper() {
 
   return (
     <ul className="nav nav-tabs p-3 pb-0">
-      {tabs?.map((tab: any, index: number) => (
-        <Tab key={index} id={tab.id} label={tab.label} active={tab.active} />
-      ))}
+      {tabs?.map((tab: any, index: number) => {
+        if (!tab.deleted) {
+          return (
+            <Tab
+              key={index}
+              id={tab.id}
+              label={tab.label}
+              active={tab.active}
+            />
+          );
+        }
+      })}
     </ul>
   );
 }
