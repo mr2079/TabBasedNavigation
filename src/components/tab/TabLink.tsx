@@ -3,13 +3,13 @@ import useTabStore from "../../stores/TabStore";
 //@ts-ignore
 import { v4 as uuidv4 } from "uuid";
 
-interface TabLinkProps {
+interface ITabLinkProps {
   className: string;
   label: string;
   component: FunctionComponent;
 }
 
-export default function TabLink(props: TabLinkProps): ReactNode {
+export default function TabLink(props: ITabLinkProps): ReactNode {
   const [addTab, deactivateTabs] = useTabStore((state: any) => [
     state.addTab,
     state.deactivateTabs,
