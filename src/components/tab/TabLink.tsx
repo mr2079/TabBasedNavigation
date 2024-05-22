@@ -10,7 +10,8 @@ interface ITabLinkProps {
 }
 
 export default function TabLink(props: ITabLinkProps): ReactNode {
-  const [addTab, deactivateTabs] = useTabStore((state: any) => [
+  const [tabs, addTab, deactivateTabs] = useTabStore((state: any) => [
+    state.tabs,
     state.addTab,
     state.deactivateTabs,
   ]);
@@ -23,10 +24,11 @@ export default function TabLink(props: ITabLinkProps): ReactNode {
       component: props.component,
       active: true,
     });
+    console.log(tabs)
   };
 
   return (
-    <a className={props.className} onClick={handleClick}>
+    <a href="#" className={props.className} onClick={handleClick}>
       {props.label}
     </a>
   );

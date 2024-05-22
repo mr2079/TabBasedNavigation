@@ -1,3 +1,8 @@
+import Page1 from "../pages/Page1";
+import Page2 from "../pages/Page2";
+import Page3 from "../pages/Page3";
+import TabLink from "../tab/TabLink";
+
 export default function Sidebar() {
   return (
     <div
@@ -13,29 +18,19 @@ export default function Sidebar() {
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-          <a href="#" className="nav-link active" aria-current="page">
-            Home
-          </a>
+          <TabLink className="nav-link"
+            label="Page 1"
+            component={Page1}/>
         </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            Dashboard
-          </a>
+        <li className="nav-item">
+          <TabLink className="nav-link"
+            label="Page 2"
+            component={Page2}/>
         </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            Orders
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            Products
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            Customers
-          </a>
+        <li className="nav-item">
+          <TabLink className="nav-link"
+            label="Page 3"
+            component={Page3}/>
         </li>
       </ul>
       <hr />
